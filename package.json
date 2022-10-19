@@ -1,0 +1,24 @@
+{
+  "name": "stone_store",
+  "version": "1.0.0",
+  "description": "Tienda virtual de productos en marmol",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Oscvago/Stone_store.git"
+  },
+  "author": "Stone Store (Oscar Valencia)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Oscvago/Stone_store/issues"
+  },
+  "homepage": "https://github.com/Oscvago/Stone_store#readme",
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "mongoose": "^6.6.5"
+  }
+}
