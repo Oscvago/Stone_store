@@ -5,13 +5,13 @@ const productosSchema = mongoose.Schema({
         type: String,
         required: [true, "Debe registrar un nombre de producto."],
         trim: true,
-        maxLength: [120, "Maximo 120 carateres."]
+        maxLength: [120, "Maximo 120 caracteres."]
     },
     unidadDeMedida: {
         type: String,
         required: [true, "Debe registrar la unidad de medida de producto."],
         trim: true,
-        maxLength: [20, "Maximo 20 carateres."]
+        maxLength: [20, "Maximo 20 caracteres."]
     },
     precio: {
         type: Number,
