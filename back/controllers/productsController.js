@@ -1,5 +1,8 @@
 const producto = require("../models/productos");
 
+// Truco para importar fetch como funcion
+const fetch = (url) => import ('node-fetch').then(({default: fetch}) => fetch(url)); 
+
 // Ver el listado de productos
 exports.getProducts = async (req, res, next) => {
     const productos = await producto.find();
@@ -72,3 +75,21 @@ exports.deleteProduct = async (req, res, next) => {
         message: "Eliminacion de producto exitosa"
     })
 }
+
+// LLAMADOS CON FECTH TODOS Y POR ID
+function verProdductos () {
+    fetch ('http://localhost:4000/api/productos')
+    .then (res => res.json ())
+    .then (res => console.log(res))
+    .catch (err => console.error (err))
+}
+// verProdductos();
+
+// Consulta de producto fetch por id
+function verProdductosId (id) {
+    fetch ('http://localhost:4000/api/productos'+id)
+    .then (res => res.json ())
+    .then (res => console.log(res))
+    .catch (err => console.error (err))
+}
+//verProdductosId('635094576eff36b92c5aa3d0');
