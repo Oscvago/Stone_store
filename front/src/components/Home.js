@@ -1,7 +1,14 @@
-import React, { Fragment } from 'react'
+import React, { Fragment, useEffect } from 'react'
+import {useDispatch} from 'react-redux'
+import { getProducts } from '../actions/productActions'
 
 export const Home = () => {
-  return (
+    const dispatch = useDispatch();  
+    useEffect(() => {
+      dispatch(getProducts()); 
+    }, [dispatch])
+    
+    return (
     <Fragment>
         <h1 id = "encabezado">Nuestros productos</h1> 
 
