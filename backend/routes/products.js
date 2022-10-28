@@ -42,7 +42,7 @@ router.delete("/:id", async (req, res) => {
 //Get
 router.get("/:id", async (req, res) => {
     try {
-        const product = await Product.findById(req.params.id );
+        const product = await Product.findById( req.params.id );
         res.status(200).json(product);
     } catch (error) {
         res.status(500).json(err);
@@ -53,7 +53,7 @@ router.get("/:id", async (req, res) => {
 //Get All
 router.get("/", async (req, res) => {
     try {
-        const products = await Product.find(req.params.id );
+        const products = await Product.find( req.params.id );
         res.status(200).json(products);
     } catch (error) {
         res.status(500).json(err);

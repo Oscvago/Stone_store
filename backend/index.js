@@ -25,12 +25,24 @@ mongoose.connection.on("connected", () => {
     console.log("MONGO DB ON")
 })
 
-//Middleware
+//Middleware 
 app.use(express.json())
+
 app.use("/api/auth", authRoute);
 app.use("/api/users", usersRoute);
 app.use("/api/products", productsRoute);
 app.use("/api/categories", categoriesRoute);
+
+app.use((err, req, res, next) => {
+    const errorStatus = err.status || 500;
+    const errorMessage = err.message || "¡Algo anda mal!";
+    return res.status(errorStatus).json({
+        success: false,
+        status: errorStatus,
+        message: errorMessage,
+        stack: err.stack,
+    });
+});
 
 app.listen(5050, () =>{
     connect()
