@@ -16,4 +16,8 @@ los cambios en el proyecto sobre el repositorio de manera local mediante la herr
 Resultado de aprendizaje: se espera que, al finalizar la actividad, los estudiantes sean capaces de implementar estilos CSS y React en conjunto
 para la creación de las interfaces gráficas de usuario y generar la respectiva comunicación entre ellas.
 
-Estado: En ejecución
+Estado: Falta Sint Review
+
+#Sprint 3.
+
+Previamente procedemos a realizar un acople de nuestros aportes para darle orden y un mejor manejo al proyecto
