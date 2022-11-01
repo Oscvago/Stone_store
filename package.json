@@ -1,0 +1,63 @@
+{
+<<<<<<< HEAD
+  "name": "mvp",
+  "version": "1.0.0",
+  "description": "Virtual Store",
+  "main": "server.js",
+  "scripts": {
+    "start": "node/back/server.js",
+    "dev": "SET NODE_ENV=DEVELOPMENT& nodemon back/server",
+    "prod": "SET NODE_ENV=PRODUCTION& nodemon back/server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jardilab/MVP.git"
+  },
+  "author": "JJAB",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jardilab/MVP/issues"
+  },
+  "homepage": "https://github.com/Jardilab/MVP#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.20.1",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.6.5",
+    "nodemailer": "^6.8.0",
+    "validator": "^13.7.0"
+=======
+  "name": "stone_store",
+  "version": "1.0.0",
+  "description": "Tienda virtual de productos en marmol",
+  "main": "server.js",
+  "scripts": {
+    "start": "node back/server.js",
+    "dev": "SET NODE_ENV = DEVELOPMENT & nodemon back/server",
+    "prod": "SET NODE_ENV = PRODUCTION & nodemon back/server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Oscvago/Stone_store.git"
+  },
+  "author": "Stone Store (Oscar Valencia)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Oscvago/Stone_store/issues"
+  },
+  "homepage": "https://github.com/Oscvago/Stone_store#readme",
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "mongoose": "^6.6.5",
+    "node-fetch": "^3.2.10"
+>>>>>>> 4934fdf95e4744cfa83a7bd70011ae0878f4b5b3
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}
