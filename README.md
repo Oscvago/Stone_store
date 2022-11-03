@@ -9,4 +9,11 @@ Sprint 1. Creación de un repositorio en Github
 Resultado de aprendizaje: se espera que, al finalizar la actividad, los estudiantes aprendan a manejar los comandos básicos para administrar
 los cambios en el proyecto sobre el repositorio de manera local mediante la herramienta Git, así como realizar mezclas de los cambios locales con la rama principal del proyecto en GitHub usando los pull request.
 
-Estado: POR REVISIÓN DE LA TUTORA
+Sprint 2. Crear el frontend para la aplicación
+
+Resultado de aprendizaje: se espera que, al finalizar la actividad, los estudiantes sean capaces de implementar estilos CSS y React en conjunto
+para la creación de las interfaces gráficas de usuario y generar la respectiva comunicación entre ellas.
+
+Estado: PENDIENTE SPRINT REVIEW
+
+Sprint 3. Próximamente
