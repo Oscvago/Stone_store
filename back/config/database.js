@@ -7,10 +7,10 @@ const connectDataBase = () => {
       useUnifiedTopology: true,
     })
     .then((con) => {
-      console.log(`DB CONNECTED to server: ${con.connection.host}`);
+      console.log(`STONE STORE: DB CONNECTED to server: ${con.connection.host}`);
     })
     .catch((con) => {
-      console.log(`No DB connection`);
+      console.log(`STONE STORE: No DB connection`);
     });
 };
 

@@ -3,9 +3,14 @@ const validator = require("validator")
 const bcrypt = require("bcryptjs")
 
 const userSchema = new mongoose.Schema({
-    name: {
+    fullName: {
         type: String,
-        required: [true, "Please, imput your name"],
+        required: [true, "Please, imput your fullname"],
+        maxlength: [120, "Name cannot exceed 120 characters"]
+    },
+    userName: {
+        type: String,
+        required: [true, "Please, imput your username"],
         maxlength: [120, "Name cannot exceed 120 characters"]
     },
     email: {
@@ -19,16 +24,6 @@ const userSchema = new mongoose.Schema({
         required: [true, "Please, input a password"],
         minlength: [8, "Password requires a minimum of 8 characters"],
         select: false
-    },
-    avatar: {
-        public_id: {
-            type: String,
-            required: true
-        },
-        url: {
-            type: String,
-            required: true
-        }
     },
     role: {
         type: String,

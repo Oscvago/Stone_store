@@ -11,5 +11,5 @@ connectDataBase()
 
 // Call to sever
 const server = app.listen(process.env.PORT, () => {
-    console.log(`Server started on port: ${process.env.PORT} in mode: ${process.env.NODE_ENV}`)
+    console.log(`Server Stone Store started on port: ${process.env.PORT} in mode: ${process.env.NODE_ENV}`)
 })
