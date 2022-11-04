@@ -1,5 +1,4 @@
 const User = require("../models/auth")
-const ErrorHandler= require("../utils/errorHandler")
 const catchAsyncErrors= require("../middleware/catchAsyncErrors")
 
 //Register a new user --> /api/user/register
