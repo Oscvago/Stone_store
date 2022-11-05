@@ -6,6 +6,13 @@ const fetch = (url) => import ('node-fetch').then(({default: fetch}) => fetch(ur
 // Ver el listado de productos
 exports.getProducts = async (req, res, next) => {
     const productos = await producto.find();
+    if (!productos) {
+      return res.status(404).json({
+        success: false,
+        error: true
+      })
+    }
+
     res.status(200).json ({
         success: true,
         cantidad: productos.length,
@@ -19,7 +26,8 @@ exports.getProductById = async (req, res, next) => {
     if (!productoId) {
         return res.status(404).json ({
             success: false,
-            message: "Producto no encontrado"
+            message: "Producto no encontrado",
+            error: true
         })
     }
     res.status(200).json ({
