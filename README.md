@@ -16,4 +16,7 @@ para la creación de las interfaces gráficas de usuario y generar la respectiva
 
 Estado: PENDIENTE SPRINT REVIEW
 
-Sprint 3. Próximamente
+Sprint 3. Crear primeras funcionalidades backend de la aplicación (inicialmente pueden guardarse los valores en variables y mostrarlos por consola)
+Resultado de aprendizaje: se espera que, al finalizar la actividad, los estudiantes hayan implementado la lógica del negocio usando conceptos y
+tecnología bajo JavaScript.
+Estado: EN EJECUCIÓN
