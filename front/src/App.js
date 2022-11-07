@@ -6,6 +6,8 @@ import Home from "./components/Home";
 import { ProductDetails } from './components/products/ProductDetails';
 //Router brought from react-router-dom (different from express)
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import ListProducts from "./components/pages/ListProducts";
+import ListVentas from "./components/pages/ListVentas";
 
 function App() {
   return (
@@ -17,6 +19,8 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/Home" element={<Home />} />
             <Route path="/product/:id" element={<ProductDetails />}/>
+            <Route path="/productos" element={<ListProducts />} />
+            <Route path="/ventas" element={<ListVentas />} />
           </Routes>
         </div>
         <Footer />

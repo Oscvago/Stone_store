@@ -1,4 +1,5 @@
 import React, { Fragment } from "react";
+import { Link } from "react-router-dom";
 import "../../App.css";
 
 const Header = () => {
@@ -7,13 +8,20 @@ const Header = () => {
       <nav className="navbar row">
         <div className="col-12 col-md-3">
           <div className="navbar-brand">
+            <Link to={"/"}>
             <img
               src="./images/hotwheelslogo.png"
               alt="E-Commerce HotWheels"
             ></img>
+            </Link>
           </div>
         </div>
         <div className="col-12 col-md-6 mt-2 mt-md-0">
+        <div>
+          <Link to={`/productos`}>Lista de Productos</Link>
+          <p></p>
+          <Link to={`/ventas`}>Lista de Ventas</Link>
+        </div>
           <div className="input-group">
             <input
               type="text"
