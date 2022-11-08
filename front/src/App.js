@@ -10,6 +10,7 @@ import ListProducts from "./components/pages/ListProducts";
 import ListVentas from "./components/pages/ListVentas";
 import { ModificarProducto } from "./components/pages/UpdateProducts";
 import { NuevoProducto } from "./components/pages/NewProducts";
+import ShoppingCart from "./components/shop/ShoppingCart";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
             <Route path="/ventas" element={<ListVentas />} />
             <Route path="/producto/:id" element={<ModificarProducto />} />
             <Route path="/producto/new" element={<NuevoProducto />} />
+            <Route path="/cart" element={<ShoppingCart />} />
           </Routes>
         </div>
         <Footer />
