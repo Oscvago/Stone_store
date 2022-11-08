@@ -1,71 +1,102 @@
-import React, { Fragment, useEffect, useState } from "react";
-import { useAlert } from "react-alert";
-import { getVentas } from "../../actions/ventasActions";
+import React, { Fragment, useEffect, useState } from 'react'
+import { useAlert } from 'react-alert';
+import { useDispatch, useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
+import { getVentasAx } from "../../actions/ventasActions";
 import MetaData from "../layout/MetaData";
+
 
 const ListVentas = () => {
 
-  const [ventas, setVentas] = useState([])
-  const [busqueda, setBusqueda] = useState("")
+    const { loading, ventas, error } = useSelector(state => state.ventas);
+    const alert = useAlert();
+    const dispatch = useDispatch();
+    useEffect(() => {
+    if (error) {
+      return alert.error(error);
+    }
+    dispatch(getVentasAx());
+    }, [alert, dispatch, error]);
 
-  const mostrarVentas = async () => setVentas(await getVentas())
+    const [busqueda, setBusqueda] = useState("")
 
-  useEffect( () => {
-    mostrarVentas()
-  }, [])
+    const filtroVentas = (e) => {
+        setBusqueda(e.target.value)
+      }
 
-  const filtroVentas = (e) => {
-    setBusqueda(e.target.value);
-  };
+    const resultados = !busqueda ? ventas : ventas.filter((desc) =>
+      desc.categoria.toLowerCase().includes(busqueda.toLocaleLowerCase())
+    )
 
-  const resultadosVentas = !busqueda ? ventas : ventas.filter((desc) => 
-          desc.categoria.toLowerCase().includes(busqueda.toLocaleLowerCase())
-        //   ||
-        //   desc.stock.toString().includes(busqueda)
-        //   ||
-        //   desc.price.toString().includes(busqueda)
-      );
+    let datosValor = []
+    resultados.forEach((dato)=>{
+      datosValor.push(dato.precio)
+    })
+    let totalValor = datosValor.reduce(function(previous, current){
+      return previous + current
+    }, 0)
+
+    let datosCantidad = []
+    resultados.forEach((dato)=>{
+      datosCantidad.push(dato.cantidad)
+    })
+    let totalCantidad = datosCantidad.reduce(function(previous, current){
+      return previous + current
+    }, 0)
 
   return (
     <div>
-      <Fragment>
-        {/* {loading ? (
-          <i className="fa fa-refresh fa-spin fa-2x fa-fw"></i>
-        ) : ( */}
-          <Fragment>
+        <Fragment>
+        {loading ? (
+            <i className="fa fa-refresh fa-spin fa-2x fa-fw"></i>
+        ) : (
             <Fragment>
-              <MetaData title="Catch Me If You Can"></MetaData>
-              <h5 id="header_ventas">
-                Vista Administrador - Lista Ventas
-              </h5>
+            <Fragment>
+                <MetaData title="Ventas"></MetaData>
+                <h5 id="header_ventas" align="center">Vista Administrador - Lista Ventas</h5>                
+                <div>
+                    <button><Link to={`/productos`}>Lista Productos</Link></button>
+                    <button><Link to={`/ventas`}>Lista Ventas</Link></button>
+                </div>
 
-              <section id="ventas" className="container mt-5">
-                <input value={busqueda} onChange={filtroVentas} type="text" placeholder="Search" className="form-control"/>
-                <table className="table table-striped table-hover mt-5 shadow-lg">
-                  <thead>
-                    <tr className="bg-curso text-black">
-                      <th>CATEGORIA</th>
-                      <th>CANTIDAD</th>
-                      <th>PRECIO</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    { resultadosVentas.map((ventas) => (
-                      <tr key={ventas._id}>
-                        <td>{ventas.categoria}</td>
-                        <td>{ventas.cantidad}</td>
-                        <td>{ventas.precio}</td>
+                <section id="ventas" className="container mt-5">
+                  <div>
+                    <input value={busqueda} onChange={filtroVentas} type="text" placeholder="Buscar por categoria" className="form-control"/>
+                  </div>
+                  <table className="table table-striped table-hover mt-5 shadow-lg">
+                    <thead>
+                      <tr className="bg-curso text-black">
+                        <th>FECHA</th>
+                        <th>CATEGORIA</th>
+                        <th>CANTIDAD</th>
+                        <th>PRECIO</th>
                       </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </section>
+                    </thead>
+                    <tbody>
+                      { resultados.map((ventas) => (
+                        <tr key={ventas._id}>
+                          <td>{new Date(`${ventas.fecha}`).toLocaleDateString("en-us", {year:'numeric', month:'short', day:'2-digit'})}</td>
+                          <td>{ventas.categoria}</td>
+                          <td>{new Intl.NumberFormat("de-DE").format(`${ventas.cantidad}`)}</td>
+                          <td>{new Intl.NumberFormat("de-DE").format(`${ventas.precio}`)}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                    <tfoot>
+                      <tr>
+                        <th colSpan={2} text-align='center'>TOTALES</th>
+                        <th>{new Intl.NumberFormat("de-DE").format(`${totalCantidad}`)}</th>
+                        <th>{new Intl.NumberFormat("de-DE").format(`${totalValor}`)}</th>
+                      </tr>
+                    </tfoot>
+                  </table>
+                </section>
             </Fragment>
-          </Fragment>
-        {/* )} */}
-      </Fragment>
+            </Fragment>
+        )}
+        </Fragment>
     </div>
-  );
-};
+  )
+}
 
-export default ListVentas;
+export default ListVentas

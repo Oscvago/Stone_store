@@ -3,6 +3,7 @@ import { useAlert } from 'react-alert';
 import { useDispatch, useSelector } from 'react-redux';
 import { getProducts } from '../../actions/productActions';
 import MetaData from '../layout/MetaData';
+import { Link } from 'react-router-dom';
 
 const ListProducts = () => {
 
@@ -14,22 +15,16 @@ const ListProducts = () => {
       return alert.error(error);
     }
     dispatch(getProducts());
-    // alert.success("OK");
     }, [alert, dispatch, error]);
 
     const [busqueda, setBusqueda] = useState("")
 
     const filtroProducto = (e) => {
         setBusqueda(e.target.value)
-        //console.log(e.target.value)
       }
 
     const resultados = !busqueda ? products : products.filter((desc) =>
       desc.name.toLowerCase().includes(busqueda.toLocaleLowerCase())
-    //   ||
-    //   desc.stock.toString().includes(busqueda)
-    //   ||
-    //   desc.price.toString().includes(busqueda)
     )
 
   return (
@@ -40,8 +35,13 @@ const ListProducts = () => {
         ) : (
             <Fragment>
             <Fragment>
-                <MetaData title="Catch Me If You Can"></MetaData>
-                <h5 id="header_products">Vista Administrador - Lista productos</h5>
+                <MetaData title="Productos"></MetaData>
+                <h5 id="header_products" align="center">Vista Administrador - Lista Productos</h5>                
+                <div>
+                    <button><Link to={`/productos`}>Lista Productos</Link></button>
+                    <button><Link to={`/ventas`}>Lista Ventas</Link></button>
+                    <button><Link to={`/producto/new`}>Nuevo Producto</Link></button>
+                </div>
 
                 <section id="products" className="container mt-5">
 
@@ -52,6 +52,7 @@ const ListProducts = () => {
                             <th>NOMBRE</th>
                             <th>STOCK</th>
                             <th>PRECIO</th>
+                            <th>ACCIONES</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -59,8 +60,12 @@ const ListProducts = () => {
                             <tr key={products._id}>
                                 <td>{products.name}</td>
                                 <td>{products.stock}</td>
-                                <td>{products.price}</td>
-                            </tr>                    
+                                <td>{new Intl.NumberFormat("de-DE").format(`${products.price}`)}</td>
+                                <td>
+                                    <button><Link to={`/producto/${products._id}`}>Modificar</Link></button>
+                                    <button>Eliminar</button>
+                                </td>
+                            </tr>
                         ))}
                     </tbody>
                     </table>
