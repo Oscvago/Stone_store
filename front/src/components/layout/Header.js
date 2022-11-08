@@ -1,17 +1,27 @@
 import React, { Fragment } from "react";
+import { Link } from "react-router-dom";
 import "../../App.css";
 
 const Header = () => {
   return (
     <Fragment>
-      <nav className="navbar row">
-        <div className="col-12 col-md-3">
-          <div className="navbar-brand">
+      <nav className="navbar row ">
+        <div className="col-12 col-md-2">
+          <div className="navbar-brand mb-0 h1">
+            <Link to={"/"}>
             <img
-              src="./images/hotwheelslogo.png"
+              src="./logosmall.png"
+              width={150}
+              height={85}
               alt="E-Commerce HotWheels"
             ></img>
+            </Link>
           </div>
+        </div>
+        <div className="col-md-1">
+          <Link to="/productos">
+            <button>Administrador</button>
+          </Link>
         </div>
         <div className="col-12 col-md-6 mt-2 mt-md-0">
           <div className="input-group">
