@@ -16,9 +16,18 @@ const ShoppingCart = () => {
     
     console.log(product)
 
-    const delFromCart = () => {};
+    const delFromCart = (id, all = false) => {
+        console.log(id,all);
+        if(all){
+            dispatch({type:TYPES.REMOVE_ALL_FROM_CART,playload:id})
+        }else{
+            dispatch({type:TYPES.REMOVE_ONE_FROM_CART,playload:id})
+        }
+    };
 
-    const clearCart = () => {};
+    const clearCart = () => {
+        dispatch({type:TYPES.CLEAR_CART});
+    };
     return(
         <div>
         <h2>Carrito de Compras</h2>

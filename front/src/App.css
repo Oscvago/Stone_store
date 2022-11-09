@@ -614,3 +614,14 @@ ul.CTAs a {
   font-size: 0.8rem;
   color: grey;
 }
+
+.box{
+  padding: 1rem;
+  margin: 1rem;
+  box-shadow:0 0 1rem #00000025 inset ;
+}
+
+.grid-responsive{
+  grid-template-columns: repeat(auto-fit,minmax(200px, 1fr));
+  gap: 1rem;
+}
