@@ -4,6 +4,9 @@ import { ALL_PRODUCTS_REQUEST,
   PRODUCT_DETAILS_REQUEST,
   PRODUCT_DETAILS_SUCCESS,
   PRODUCT_DETAILS_FAIL,
+  PRODUCT_NEW_REQUEST,
+  PRODUCT_NEW_SUCCESS,
+  PRODUCT_NEW_FAIL,
   PRODUCT_UPDATE_REQUEST,
   PRODUCT_UPDATE_SUCCESS,
   PRODUCT_UPDATE_FAIL,
@@ -59,6 +62,38 @@ export const productDetailsReducer = (state = { product: {} }, action) => {
           }
 
       case PRODUCT_DETAILS_FAIL:
+          return {
+              ...state,
+              error: action.payload
+          }
+
+      case CLEAR_ERRORS:
+          return {
+              ...state,
+              error: null
+          }
+
+      default:
+          return state
+  }
+}
+
+export const productNewReducer = (state = { product: {} }, action) => {
+  switch (action.type) {
+
+      case PRODUCT_NEW_REQUEST:
+          return {
+              ...state,
+              loading: true
+          }
+
+      case PRODUCT_NEW_SUCCESS:
+          return {
+              loading: false,
+              product: action.payload
+          }
+
+      case PRODUCT_NEW_FAIL:
           return {
               ...state,
               error: action.payload
