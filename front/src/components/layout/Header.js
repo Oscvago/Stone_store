@@ -53,9 +53,11 @@ const Header = () => {
           &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
           <i className="fa fa-sign-in fa-2x text-white" aria-hidden="true"></i>
           <span className="ml-2">
+          <Link to="/signin">
             <button className="btn" id="login_btn">
               LOGIN
             </button>
+          </Link>
           </span>
         </div>
       </nav>
