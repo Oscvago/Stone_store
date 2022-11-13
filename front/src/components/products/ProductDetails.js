@@ -4,8 +4,8 @@ import MetaData from "../layout/MetaData"
 import { useParams } from 'react-router-dom'
 import { getProductDetails, clearErrors } from '../../actions/productActions'
 import { useAlert } from 'react-alert'
-import { Carousel } from 'react-bootstrap'
 import "../../App.css";
+import { Card } from 'react-bootstrap'
 
 
 export const ProductDetails = () => {
@@ -49,14 +49,17 @@ export const ProductDetails = () => {
         <Fragment>
           <MetaData title={product.name}></MetaData>
           <div className='row d-flex justify-content-around'>
+
             <div className='col-12 col-lg-5 mt-5' id="imagen_product"> {/* className='col-12 col-lg-5 img-fluid' */}
-              <Carousel pause='hover'>
+            <div className='col-12 col-lg-12 img-fluid'>
+              <Card>
                 {product.imagen && product.imagen.map(img => (
-                  <Carousel.Item key={img.public_id}>
-                    <img className="d-block w-100" src={"../" + img.url} alt={product.name}></img>
-                  </Carousel.Item>
+                  <Card.Img key={img.public_id} src={"../" + img.url} alt={product.name}>
+                    {/* <img className="d-block w-100" src={"../" + img.url} alt={product.name}></img> */}
+                  </Card.Img>
                 ))}
-              </Carousel>
+              </Card>
+              </div>
             </div>
 
             <div className='col-12 col-lg-5 mt-5'>
