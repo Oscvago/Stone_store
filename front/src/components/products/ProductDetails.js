@@ -74,7 +74,7 @@ export const ProductDetails = () => {
                 <input type="number" className="form-control count d-inline" value={quantity} readOnly />
                 <span className="btn btn-primary plus" onClick={increaseQty}>+</span>
               </div>
-              <button type="button" id="carrito_btn" className="btn btn-primary d-inline ml-4" disabled={product.stock === 0}>Add to 🛒</button>
+              <button type="button" id="carrito_btn" className="btn btn-primary d-inline ml-4" disabled={product.stock === 0}>Add to shopping car</button>
               <hr />
               <p>Estado: <span id="stock_stado" className={product.stock > 0 ? 'greenColor' : 'redColor'}>{product.stock > 0 ? "Available" : "Shot out"}</span></p>
               <hr />

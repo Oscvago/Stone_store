@@ -14,6 +14,8 @@ export const getProducts = () => async (dispatch) => {
   try {
     dispatch({ type: ALL_PRODUCTS_REQUEST })
 
+    // let link = `/api/products?keyword=${keyword}&page=${currentPage}&price[gte]=${price[0]}&price[lte]=${price[1]}`
+
     const { data } = await axios.get("api/products")
 
     dispatch({

@@ -5,7 +5,7 @@ import "../../App.css";
 const Header = () => {
   return (
     <Fragment>
-      <nav className="navbar row ">
+      <nav className="navbar row">
         <div className="col-12 col-md-2">
           <div className="navbar-brand mb-0 h1">
             <Link to={"/"}>
@@ -13,33 +13,17 @@ const Header = () => {
               src="./logosmall.png"
               width={150}
               height={85}
-              alt="E-Commerce HotWheels"
+              alt="Stone Store"
             ></img>
             </Link>
           </div>
         </div>
         <div className="col-md-1">
           <Link to="/productos">
-            <button>Administrador</button>
+            <button className="administrador">Administrador</button>
           </Link>
         </div>
         <div className="col-12 col-md-6 mt-2 mt-md-0">
-          <div className="input-group">
-            <input
-              type="text"
-              id="search_field"
-              className="form-control text-center"
-              placeholder="Search product"
-            ></input>
-            <div className="input-group-append">
-              <button id="search-btn" className="btn">
-                <i
-                  className="fa fa-search-plus fa-2x text-white"
-                  aria-hidden="true"
-                ></i>
-              </button>
-            </div>
-          </div>
         </div>
         <div className="col-12 col-md-3 mt-4 mt-md-0 text-center">
           <span className="ml-5"></span>
@@ -51,12 +35,13 @@ const Header = () => {
             0
           </span>
           &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-          <i className="fa fa-sign-in fa-2x text-white" aria-hidden="true"></i>
+          <Link to="/login" className='btn ml-4' id="login_btn">LOGIN</Link>
+          {/* <i className="fa fa-sign-in fa-2x text-white" aria-hidden="true"></i>
           <span className="ml-2">
             <button className="btn" id="login_btn">
               LOGIN
-            </button>
-          </span>
+            </button> */}
+          {/* </span> */}
         </div>
       </nav>
     </Fragment>

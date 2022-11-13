@@ -10,6 +10,8 @@ import ListProducts from "./components/pages/ListProducts";
 import ListVentas from "./components/pages/ListVentas";
 import { ModificarProducto } from "./components/pages/UpdateProducts";
 import { NuevoProducto } from "./components/pages/NewProducts";
+import { Login } from './components/user/Login';
+import { Register } from './components/user/Register';
 
 function App() {
   return (
@@ -21,6 +23,9 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/Home" element={<Home />} />
             <Route path="/product/:id" element={<ProductDetails />}/>
+            <Route path="/search/:keyword" element={<Home />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element= {<Register />} />
             <Route path="/productos" element={<ListProducts />} />
             <Route path="/ventas" element={<ListVentas />} />
             <Route path="/producto/:id" element={<ModificarProducto />} />

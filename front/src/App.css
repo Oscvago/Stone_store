@@ -6,7 +6,28 @@ body {
   margin: 0px;
   padding: 0px;
   overflow-x: hidden;
+  background-image: radial-gradient(circle at 84.86% 99.78%, #b3a5fb 0, #8789f0 25%, #486ee5 50%, #0056da 75%, #0044d0 100%);
 }
+
+.administrador {
+  text-decoration: none;
+  border: none;
+  border-radius: 5px;
+  padding: 2px;
+  background: #baca7f;
+  color: black;
+}
+.administrador:hover { 
+  padding: 1px; 
+  background: blue; 
+  color: #febd69; 
+}
+.administrador:active { 
+  padding: 1px; 
+  background: #febd69; 
+  color: black; 
+} 
+
 
 /* Scroll Bar */
 
@@ -26,8 +47,13 @@ body {
   border-radius: 5px;
 }
 
+.hola {
+  justify-content: flex-start;
+  align-items: center;
+}
+
 nav {
-  background-color: #232f3e;
+  background-color: radial-gradient(circle at 84.86% 99.78%, #b3a5fb 0, #8789f0 25%, #486ee5 50%, #0056da 75%, #0044d0 100%);;
   padding: 1rem 1rem;
 }
 
@@ -47,7 +73,7 @@ f
 
 #login_btn,
 #view_btn {
-  background-color: #febd69;
+  background-color: #baca7f;
   padding: 0.4rem 1.8rem;
   font-family: calibri;
 }
@@ -58,7 +84,7 @@ f
 }
 
 #cart_count {
-  background-color: #febd69;
+  background-color: #baca7f;
   padding: 0.2rem 0.5rem;
   border-radius: 0.2rem;
   color: black;
@@ -210,6 +236,11 @@ footer {
   border: 6px solid #fa9c23;
   border-color: #fa9c23 transparent;
   animation: lds-dual-ring 1.2s linear infinite;
+}
+
+.footer {
+  text-align: center;
+  color: #d15005; 
 }
 @keyframes lds-dual-ring {
   0% {
