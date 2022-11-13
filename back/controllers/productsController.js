@@ -62,7 +62,7 @@ exports.updateProduct = catchAsyncErrors(async (req, res, next) => {
   }
 
   // Validation 2: The product exists? --> YES --> Validate only new or updated attributes
-  producto = await producto.findByIdAndUpdate(req.params.id, req.body, {
+    product = await producto.findByIdAndUpdate(req.params.id, req.body, {
     new: true,
     runValidators: true,
   })

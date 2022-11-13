@@ -27,11 +27,13 @@ const productSchema = mongoose.Schema({
         {
             public_id: {
                 type: String,
-                required: true,                
+                required: true,
+                default: "products/dsvbpny402gelwugv2lw"
             },
             url: {
                 type: String,
                 required: true,
+                default: "./logo.png"
             }
         }        
     ],
@@ -40,9 +42,9 @@ const productSchema = mongoose.Schema({
         required: [true, "Insert product category"],
         enum: {
             values: [
-                "Kitchen",
-                "Bathtub",
-                "Art"
+                "Marmol",
+                "Granito",
+                "Travertino"
             ]
         }
     },

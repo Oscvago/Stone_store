@@ -7,6 +7,12 @@ import {
   PRODUCT_DETAILS_REQUEST,
   PRODUCT_DETAILS_SUCCESS,
   PRODUCT_DETAILS_FAIL,
+  PRODUCT_NEW_REQUEST,
+  PRODUCT_NEW_SUCCESS,
+  PRODUCT_NEW_FAIL,
+  PRODUCT_UPDATE_REQUEST,
+  PRODUCT_UPDATE_SUCCESS,
+  PRODUCT_UPDATE_FAIL,
   CLEAR_ERRORS
 } from '../constants/productConstants';
 
@@ -44,6 +50,42 @@ export const getProductDetails = (id) => async(dispatch)=>{
   }catch (error){
       dispatch({
           type:PRODUCT_DETAILS_FAIL,
+          payload: error.response.data.message
+      })
+  }
+}
+
+export const postProductDetails = (body) => async (dispatch) => {
+  try {
+    dispatch({type: PRODUCT_NEW_REQUEST})
+    
+    const {data} = await axios.post(`/api/product/new`, body)
+
+      dispatch({
+          type:PRODUCT_NEW_SUCCESS,
+          payload: data.product
+      })
+  }catch (error){
+      dispatch({
+          type:PRODUCT_NEW_FAIL,
+          payload: error.response.data.message
+      })
+  }
+}
+
+export const putProductDetails = (id, body) => async (dispatch) => {
+  try {
+    dispatch({type: PRODUCT_UPDATE_REQUEST})
+    
+    const {data} = await axios.put(`/api/product/${id}`, body)
+
+      dispatch({
+          type:PRODUCT_UPDATE_SUCCESS,
+          payload: data.product
+      })
+  }catch (error){
+      dispatch({
+          type:PRODUCT_UPDATE_FAIL,
           payload: error.response.data.message
       })
   }
