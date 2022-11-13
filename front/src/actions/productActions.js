@@ -55,6 +55,7 @@ export const getProductDetails = (id) => async(dispatch)=>{
   }
 }
 
+// Metodo POST
 export const postProductDetails = (body) => async (dispatch) => {
   try {
     dispatch({type: PRODUCT_NEW_REQUEST})
