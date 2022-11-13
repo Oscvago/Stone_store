@@ -42,9 +42,9 @@ const productSchema = mongoose.Schema({
         required: [true, "Insert product category"],
         enum: {
             values: [
-                "Kitchen",
-                "Bathtub",
-                "Art"
+                "Marmol",
+                "Granito",
+                "Travertino"
             ]
         }
     },

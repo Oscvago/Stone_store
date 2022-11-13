@@ -23,7 +23,7 @@ export const Home = () => {
       ) : (
         <Fragment>
           <Fragment>
-            <MetaData title="Catch Me If You Can"></MetaData>
+            <MetaData title="Home"></MetaData>
             <h5 id="header_products">Latest products ⭐</h5>
             
             <section id="products" className="container mt-5">
@@ -66,7 +66,7 @@ export const Home = () => {
                             id="view_btn"
                             className="btn btn-block"
                           >
-                            View datails
+                            Ver detalle
                           </Link>
                         </div>
                       </div>
