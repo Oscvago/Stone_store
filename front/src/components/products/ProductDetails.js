@@ -13,9 +13,17 @@ export const ProductDetails = () => {
   const dispatch = useDispatch();
   const alert = useAlert();
   const [quantity, setQuantity] = useState(1)
-
+  const [data, setData] = useState("");
+  const [data2, setData2] = useState("");
+  const send_data = () => {localStorage.setItem("Nombre",data)
+  console.log(data)
+  setData2(localStorage.getItem("Nombre"))
+} 
+  
 
   useEffect(() => {
+    setData2(localStorage.getItem("Nombre"))
+    console.log(localStorage.getItem("Nombre"));
     dispatch(getProductDetails(id))
     if (error) {
       alert.error(error);
@@ -83,8 +91,8 @@ export const ProductDetails = () => {
               <hr />              
               <button id="btn_review" type="button" className="btn btn-primary mt-4"
                 data-toggle="modal" data-target="#ratingModal">Write your review</button>
-              <div className="alert alert-danger mt-5" type="alert">Login for write your review</div>
-
+              <div className="alert alert-danger mt-5" type="alert">{data2}</div>
+              
               {/* Message for write your review and score product */}
               <div className="row mt-2 mb-5">
                 <div className="rating w-50">
@@ -107,20 +115,25 @@ export const ProductDetails = () => {
                             <li className="star"><i className="fa fa-star"></i></li>
                           </ul>
 
-                          <textarea name="review" id="review" className="form-control mt3"></textarea>
+                          <textarea name="review" id="review" className="form-control mt3" onChange={(e) => setData(e.target.value)}></textarea>
 
-                          <button className="btn my-3 float-right review-btn px-4 text-white"
+                          <button onClick = {send_data} className="btn my-3 float-right review-btn px-4 text-white"
                             data-dismiss="modal" aria-label="Close">Send</button>
 
                         </div>
+                    
                       </div>
+                      
                     </div>
+                    
 
                   </div>
                 </div>
               </div>
             </div>
+            
           </div>
+          
         </Fragment>
       )}
     </Fragment>
