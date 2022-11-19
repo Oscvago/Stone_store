@@ -16,7 +16,7 @@ const productSchema = mongoose.Schema({
     description:{
         type: String,
         required: [true, "Insert product description"],
-        maxLength: [300, "product description limited to 300 characters"],
+        maxLength: [3000, "product description limited to 300 characters"],
         default: 0.0
     },
     rating:{
@@ -33,7 +33,7 @@ const productSchema = mongoose.Schema({
             url: {
                 type: String,
                 required: true,
-                default: "./logo.png"
+                default: "./images/products/granito-rosabel.jpg"
             }
         }        
     ],
@@ -88,7 +88,11 @@ const productSchema = mongoose.Schema({
     createAt:{
         type: Date,
         default: Date.now
-    }  
+    },
+    inCart: {
+        type: Boolean,
+        default: false
+    }
 })
 
 module.exports=mongoose.model("products", productSchema);

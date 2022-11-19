@@ -12,3 +12,12 @@ exports.getVentas = catchAsyncErrors(async (req, res, next) => {
         ventas
       })
 })
+
+exports.newVentas = catchAsyncErrors(async (req, res, next) => {
+    const ventas = await venta.insertMany(req.body);
+  
+    res.status(201).json({
+      success: true,
+      ventas
+    })
+  })

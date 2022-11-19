@@ -11,6 +11,10 @@ app.use(cookieParser());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(fileUpload());
 app.use(express.json());
+app.use(fileUpload({
+    useTempFiles: true,
+    tempFileDir: "./front/public/images"
+}))
 
 // Import Routes
 const products = require("./routes/products");

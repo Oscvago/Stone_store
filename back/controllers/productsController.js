@@ -88,7 +88,7 @@ exports.deleteProduct = catchAsyncErrors(async (req, res, next) => {
   }
 
   // Validation 2: The product exists? --> YES --> Answer Option: The product has been successfully removed
-  await producto.remove()
+  await producto.deleteOne({"_id":product.id})
     res.status(200).json({
       success: true,
       message: "Product removed successfully"
