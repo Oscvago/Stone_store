@@ -14,9 +14,11 @@ Sprint 2. Crear el frontend para la aplicación
 Resultado de aprendizaje: se espera que, al finalizar la actividad, los estudiantes sean capaces de implementar estilos CSS y React en conjunto
 para la creación de las interfaces gráficas de usuario y generar la respectiva comunicación entre ellas.
 
-Estado: PENDIENTE SPRINT REVIEW
-
 Sprint 3. Crear primeras funcionalidades backend de la aplicación (inicialmente pueden guardarse los valores en variables y mostrarlos por consola)
+
 Resultado de aprendizaje: se espera que, al finalizar la actividad, los estudiantes hayan implementado la lógica del negocio usando conceptos y
 tecnología bajo JavaScript.
-Estado: EN EJECUCIÓN
+
+Sprint 4.Crear modelamiento de base de datos con MongoDB, realizar conexión con el sistema y desplegar.
+
+Resultado de aprendizaje: se espera que, al finalizar la actividad, los estudiantes comprendan el diseño e implementación de una base de datos no relacional en MongoDB.
