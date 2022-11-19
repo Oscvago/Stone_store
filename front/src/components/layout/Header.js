@@ -35,7 +35,8 @@ const Header = () => {
             0
           </span>
           &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-          <Link to="/login" className='btn ml-4' id="login_btn">LOGIN</Link>
+          <button className="administrador">Login</button>
+          {/* <Link to="/login" className='btn ml-4' id="login_btn">LOGIN</Link> */}
           {/* <i className="fa fa-sign-in fa-2x text-white" aria-hidden="true"></i>
           <span className="ml-2">
             <button className="btn" id="login_btn">

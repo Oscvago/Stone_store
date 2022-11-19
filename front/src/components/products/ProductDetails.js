@@ -5,6 +5,7 @@ import { useParams } from 'react-router-dom'
 import { getProductDetails, clearErrors } from '../../actions/productActions'
 import { useAlert } from 'react-alert'
 import { Carousel } from 'react-bootstrap'
+import "../../App.css";
 
 
 export const ProductDetails = () => {

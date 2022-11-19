@@ -5,6 +5,7 @@ import { useNavigate, useParams } from 'react-router-dom'
 import { getProductDetails, clearErrors, putProductDetails } from '../../actions/productActions'
 import { useAlert } from 'react-alert'
 import { Button, Card, Col, Form, Row } from 'react-bootstrap'
+import "../../App.css";
 
 
 export const ModificarProducto = () => {
@@ -102,7 +103,7 @@ export const ModificarProducto = () => {
                             </Col>
                         </Form.Group>
                           
-                        <Button variant='primary' type='submit'> Guardar </Button>
+                        <Button className="administrador" variant='primary' type='submit'> Guardar </Button>
 
                     </Form>
 

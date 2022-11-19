@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom'
 import { Button, Card, Col, Form, Row } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
 import { postProductDetails } from '../../actions/productActions'
+import "../../App.css";
 
 
 export const NuevoProducto = () => {
@@ -39,7 +40,7 @@ export const NuevoProducto = () => {
 
             <div className='row d-flex justify-content-around'>
 
-                <div className='col-12 col-lg-5 mt-5'>
+                <div className='col-12 col-lg-5 mt-5'> 
 
                     <Card>
                         <label align="center">Seleccione imagen</label>
@@ -84,7 +85,7 @@ export const NuevoProducto = () => {
                             </Col>
                         </Form.Group>
 
-                        <Button variant='primary' type='submit'> Guardar </Button>
+                        <Button className="administrador" variant='primary' type='submit'> Guardar </Button>
 
                     </Form>
 

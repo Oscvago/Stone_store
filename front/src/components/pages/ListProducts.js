@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { getProducts } from "../../actions/productActions";
 import MetaData from "../layout/MetaData";
 import { Link } from "react-router-dom";
+import "../../App.css";
 
 const ListProducts = () => {
   const { loading, products, error } = useSelector((state) => state.products);
@@ -60,15 +61,15 @@ const ListProducts = () => {
                 Vista Administrador - Lista Productos
               </h5>
               <div>
-                <button>
-                  <Link to={`/productos`}>Lista Productos</Link>
-                </button>
-                <button>
-                  <Link to={`/ventas`}>Lista Ventas</Link>
-                </button>
-                <button>
-                  <Link to={`/producto/new`}>Nuevo Producto</Link>
-                </button>
+                <Link to={`/productos`}>
+                  <button className="administrador">Lista Productos</button>
+                </Link>
+                <Link to={`/ventas`}>
+                  <button className="administrador">Lista Ventas</button>
+                </Link>
+                <Link to={`/producto/new`}>
+                  <button className="administrador">Nuevo Producto</button>
+                </Link>
               </div>
 
               <section id="products" className="container mt-5">
@@ -139,12 +140,10 @@ const ListProducts = () => {
                           )}
                         </td>
                         <td>
-                          <button>
-                            <Link to={`/producto/${products._id}`}>
-                              Modificar
-                            </Link>
-                          </button>
-                          <button>Eliminar</button>
+                          <Link to={`/producto/${products._id}`}>
+                            <button className="administrador">Modificar</button>
+                          </Link>
+                          <button className="administrador">Eliminar</button>
                         </td>
                       </tr>
                     ))}

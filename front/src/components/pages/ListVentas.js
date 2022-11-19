@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { getVentasAx } from "../../actions/ventasActions";
 import MetaData from "../layout/MetaData";
+import "../../App.css";
 
 
 const ListVentas = () => {
@@ -55,8 +56,12 @@ const ListVentas = () => {
                 <MetaData title="Ventas"></MetaData>
                 <h5 id="header_ventas" align="center">Vista Administrador - Lista Ventas</h5>                
                 <div>
-                    <button><Link to={`/productos`}>Lista Productos</Link></button>
-                    <button><Link to={`/ventas`}>Lista Ventas</Link></button>
+                  <Link to={`/productos`}>
+                    <button className="administrador">Lista Productos</button>
+                  </Link>
+                  <Link to={`/ventas`}>
+                    <button className="administrador">Lista Ventas</button>
+                  </Link>
                 </div>
 
                 <section id="ventas" className="container mt-5">
