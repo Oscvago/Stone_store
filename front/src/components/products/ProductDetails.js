@@ -5,6 +5,7 @@ import { useParams } from 'react-router-dom'
 import { getProductDetails, clearErrors } from '../../actions/productActions'
 import { useAlert } from 'react-alert'
 import { Carousel } from 'react-bootstrap'
+import "../../App.css";
 
 
 export const ProductDetails = () => {
@@ -74,16 +75,16 @@ export const ProductDetails = () => {
                 <input type="number" className="form-control count d-inline" value={quantity} readOnly />
                 <span className="btn btn-primary plus" onClick={increaseQty}>+</span>
               </div>
-              <button type="button" id="carrito_btn" className="btn btn-primary d-inline ml-4" disabled={product.stock === 0}>Add to shopping car</button>
+              <button type="button" id="carrito_btn" className="botonp" disabled={product.stock === 0}>Agregar al carrito</button>
               <hr />
               <p>Estado: <span id="stock_stado" className={product.stock > 0 ? 'greenColor' : 'redColor'}>{product.stock > 0 ? "Available" : "Shot out"}</span></p>
               <hr />
-              <h5 className="mt-2">Description:</h5>
+              <h5 className="mt-2">Descripción:</h5>
               <p>{product.description}</p>
               <hr />              
-              <button id="btn_review" type="button" className="btn btn-primary mt-4"
-                data-toggle="modal" data-target="#ratingModal">Write your review</button>
-              <div className="alert alert-danger mt-5" type="alert">Login for write your review</div>
+              <button id="btn_review" type="button" className="botonp"
+                data-toggle="modal" data-target="#ratingModal">Opiniones</button>
+              <div className="alert alert-danger mt-5" type="alert">Ingresar para opiniones</div>
 
               {/* Message for write your review and score product */}
               <div className="row mt-2 mb-5">
@@ -93,7 +94,7 @@ export const ProductDetails = () => {
                     <div className="modal-dialog" role="document">
                       <div className="modal-content">
                         <div className="modal-header">
-                          <h5 className="modal-title" id="ratingModalLabel">Send Review</h5>
+                          <h5 className="modal-title" id="ratingModalLabel">Enviar opiniones</h5>
                           <button type="button" className='close' data-dismiss="modal" aria-label='Close'>
                             <span aria-hidden="true">&times;</span>
                           </button>
@@ -110,7 +111,7 @@ export const ProductDetails = () => {
                           <textarea name="review" id="review" className="form-control mt3"></textarea>
 
                           <button className="btn my-3 float-right review-btn px-4 text-white"
-                            data-dismiss="modal" aria-label="Close">Send</button>
+                            data-dismiss="modal" aria-label="Close">Enviar</button>
 
                         </div>
                       </div>

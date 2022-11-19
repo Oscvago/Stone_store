@@ -9,22 +9,41 @@ body {
   background-image: radial-gradient(circle at 84.86% 99.78%, #b3a5fb 0, #8789f0 25%, #486ee5 50%, #0056da 75%, #0044d0 100%);
 }
 
-.administrador {
+/* ================== tablas ======================== */
+
+table {
+  background-color: white;
+}
+
+thead {
+  text-align: center;
+  border: 2px solid black;
+}
+
+td, th {
+  border: 2px solid black;
+}
+
+
+/* ================== Botones ======================== */
+
+.botonp {
   text-decoration: none;
-  border: none;
+  border: groove;
+  border-color: #9ae0f5;
   border-radius: 5px;
-  padding: 2px;
-  background: #baca7f;
+  padding: 1px 4px 2px 4px;
+  background: #a0e1f5;
   color: black;
+  cursor: pointer;
 }
-.administrador:hover { 
+.botonp:hover { 
   padding: 1px; 
-  background: blue; 
-  color: #febd69; 
+  background: rgb(121, 184, 180); 
 }
-.administrador:active { 
+.botonp:active { 
   padding: 1px; 
-  background: #febd69; 
+  background: #e6f5c5; 
   color: black; 
 } 
 
@@ -139,13 +158,6 @@ f
   margin-left: 0.5rem;
 }
 
-/* Footer */
-footer {
-  margin-top: 8rem;
-  color: grey;
-  bottom: 0;
-  width: 100%;
-}
 
 /* Ratings */
 
@@ -238,9 +250,22 @@ footer {
   animation: lds-dual-ring 1.2s linear infinite;
 }
 
+
+/* ================== Footer ======================== */
+
+footer {
+  background-color: #2e2e2e;
+  margin-top: 8rem;
+  color: grey;
+  bottom: 0;
+  width: 100%;
+}
+
 .footer {
   text-align: center;
-  color: #d15005; 
+  color: #ffffff; 
+  margin-top: 12px;
+  padding-top: 0%;  
 }
 @keyframes lds-dual-ring {
   0% {

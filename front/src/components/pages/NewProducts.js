@@ -1,7 +1,7 @@
 import React, { Fragment, useState } from 'react'
 import MetaData from "../layout/MetaData"
 import { useNavigate } from 'react-router-dom'
-import { Button, Card, Col, Form, Row } from 'react-bootstrap'
+import { Button, Col, Form, Row } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
 import { postProductDetails } from '../../actions/productActions'
 
@@ -41,10 +41,10 @@ export const NuevoProducto = () => {
 
                 <div className='col-12 col-lg-5 mt-5'>
 
-                    <Card>
+                    {/* <Card>
                         <label align="center">Seleccione imagen</label>
                         <Card.Img></Card.Img>
-                    </Card>
+                    </Card> */}
 
                 </div>
 
@@ -84,7 +84,7 @@ export const NuevoProducto = () => {
                             </Col>
                         </Form.Group>
 
-                        <Button variant='primary' type='submit'> Guardar </Button>
+                        <Button className="botonp" variant='primary' type='submit'> Guardar </Button>
 
                     </Form>
 

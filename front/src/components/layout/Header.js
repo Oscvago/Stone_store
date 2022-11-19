@@ -4,6 +4,7 @@ import "../../App.css";
 import { useDispatch, useSelector } from 'react-redux'
 import { useAlert } from 'react-alert'
 import { logout } from "../../actions/userActions"
+import "../../App.css";
 
 const Header = () => {
   const alert = useAlert();

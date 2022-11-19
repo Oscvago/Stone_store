@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { getProducts } from "../../actions/productActions";
 import MetaData from "../layout/MetaData";
 import { Link } from "react-router-dom";
+import "../../App.css";
 
 const ListProducts = () => {
   const { loading, products, error } = useSelector((state) => state.products);
@@ -59,16 +60,16 @@ const ListProducts = () => {
               <h5 id="header_products" align="center">
                 Vista Administrador - Lista Productos
               </h5>
-              <div>
-                <button>
-                  <Link to={`/productos`}>Lista Productos</Link>
-                </button>
-                <button>
-                  <Link to={`/ventas`}>Lista Ventas</Link>
-                </button>
-                <button>
-                  <Link to={`/producto/new`}>Nuevo Producto</Link>
-                </button>
+              <div>                
+                <Link to={`/productos`}> 
+                  <button className="botonp">Lista Productos</button>
+                </Link>
+                <Link to={`/ventas`}>
+                  <button className="botonp">Lista Ventas</button>
+                </Link>
+                <Link to={`/producto/new`}>
+                  <button className="botonp">Nuevo Producto</button>
+                </Link>
               </div>
 
               <section id="products" className="container mt-5">
@@ -139,12 +140,10 @@ const ListProducts = () => {
                           )}
                         </td>
                         <td>
-                          <button>
-                            <Link to={`/producto/${products._id}`}>
-                              Modificar
-                            </Link>
-                          </button>
-                          <button>Eliminar</button>
+                          <Link to={`/producto/${products._id}`}>
+                              <button className="botonp">Modificar</button>
+                          </Link>
+                          <button className="botonp">Eliminar</button>
                         </td>
                       </tr>
                     ))}

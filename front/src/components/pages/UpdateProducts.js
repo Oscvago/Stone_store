@@ -102,7 +102,7 @@ export const ModificarProducto = () => {
                             </Col>
                         </Form.Group>
                           
-                        <Button variant='primary' type='submit'> Guardar </Button>
+                        <Button className="botonp" variant='primary' type='submit'> Guardar </Button>
 
                     </Form>
 
