@@ -4,8 +4,9 @@ import MetaData from "../layout/MetaData"
 import { useParams } from 'react-router-dom'
 import { getProductDetails, clearErrors } from '../../actions/productActions'
 import { useAlert } from 'react-alert'
-import { Carousel } from 'react-bootstrap'
 import "../../App.css";
+import { Card } from 'react-bootstrap'
+import { getProductsCart, postProductsCart } from '../../actions/ventasActions'
 
 
 export const ProductDetails = () => {
@@ -43,20 +44,34 @@ export const ProductDetails = () => {
     setQuantity(qty)
   }
 
+  const addItemCart = async (name,img,price,amount) => {
+
+    img = img[0]
+    img = img.url
+
+    let datos = {"name": name, "img": img, "price": price, "amount": amount}
+
+    await dispatch(postProductsCart(datos))
+    dispatch(getProductsCart())
+  }
+
   return (
     <Fragment>
       {loading ? <i className="fa fa-refresh fa-spin fa-2x fa-fw"></i> : (
         <Fragment>
           <MetaData title={product.name}></MetaData>
           <div className='row d-flex justify-content-around'>
-            <div className='col-12 col-lg-5 mt-5' id="imagen_product"> {/* className='col-12 col-lg-5 img-fluid' */}
-              <Carousel pause='hover'>
+
+            <div className='col-12 col-lg-5 mt-5' id="imagen_product">
+              <div className='col-12 col-lg-12 img-fluid'>
+              <Card pause='hover'>
                 {product.imagen && product.imagen.map(img => (
-                  <Carousel.Item key={img.public_id}>
-                    <img className="d-block w-100" src={"../" + img.url} alt={product.name}></img>
-                  </Carousel.Item>
+                  <Card.Img key={img.public_id} src={"../" + img.url} alt={product.name}>
+                    {/* <img className="d-block w-100" src={"../" + img.url} alt={product.name}></img> */}
+                  </Card.Img>
                 ))}
-              </Carousel>
+              </Card>
+              </div>
             </div>
 
             <div className='col-12 col-lg-5 mt-5'>
@@ -75,7 +90,7 @@ export const ProductDetails = () => {
                 <input type="number" className="form-control count d-inline" value={quantity} readOnly />
                 <span className="btn btn-primary plus" onClick={increaseQty}>+</span>
               </div>
-              <button type="button" id="carrito_btn" className="botonp" disabled={product.stock === 0}>Agregar al carrito</button>
+              <button type="button" id="carrito_btn" className="botonp" disabled={product.stock === 0} onClick={() => addItemCart(product.name, product.imagen, product.price, quantity)}>Add to shopping car</button>
               <hr />
               <p>Estado: <span id="stock_stado" className={product.stock > 0 ? 'greenColor' : 'redColor'}>{product.stock > 0 ? "Available" : "Shot out"}</span></p>
               <hr />

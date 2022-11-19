@@ -22,6 +22,7 @@ import { ForgotPassword } from './components/user/ForgotPassword';
 import { NewPassword } from './components/user/NewPassword';
 import ProtectedRoute from './routes/ProtectedRoute';
 
+import Cart from "./components/pages/Cart";
 
 function App() {
   useEffect(() => {
@@ -31,6 +32,7 @@ function App() {
     <Router>
       <div className="App">
         <Header />
+        <main className="d-flex flex-nowrap">
         <div className="container container-fluid">
           <Routes>
             <Route path="/" element={<Home />} />
@@ -51,8 +53,10 @@ function App() {
             {/* Route sacurity*/}
             <Route path="/dashboard" element={<ProtectedRoute isAdmin={true}><Dashboard /></ProtectedRoute>} />
             <Route path="/producto/:id" element={<ProtectedRoute isAdmin={true}><ModificarProducto /></ProtectedRoute>} />
+            <Route path="/carrito" element={<Cart />} />
           </Routes>
         </div>
+        </main>
         <Footer />
       </div>
     </Router>

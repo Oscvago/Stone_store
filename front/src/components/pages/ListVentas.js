@@ -2,7 +2,7 @@ import React, { Fragment, useEffect, useState } from 'react'
 import { useAlert } from 'react-alert';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { getVentasAx } from "../../actions/ventasActions";
+import { getVentas } from "../../actions/ventasActions";
 import MetaData from "../layout/MetaData";
 import "../../App.css";
 
@@ -16,7 +16,7 @@ const ListVentas = () => {
     if (error) {
       return alert.error(error);
     }
-    dispatch(getVentasAx());
+    dispatch(getVentas());
     }, [alert, dispatch, error]);
 
     const [busqueda, setBusqueda] = useState("")

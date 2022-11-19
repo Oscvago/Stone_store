@@ -1,7 +1,7 @@
 import React, { Fragment, useEffect, useState } from "react";
 import { useAlert } from "react-alert";
 import { useDispatch, useSelector } from "react-redux";
-import { getProducts } from "../../actions/productActions";
+import { deleteProduct, getProducts } from "../../actions/productActions";
 import MetaData from "../layout/MetaData";
 import { Link } from "react-router-dom";
 import "../../App.css";
@@ -46,6 +46,12 @@ const ListProducts = () => {
           ? desc.stock === parseInt(filtros.stock)
           : desc.stock >= 0
       );
+  }
+
+  const eliminarProducto = (id) => {
+    
+    dispatch(deleteProduct(id))
+    window.location.reload()
   }
 
   return (
@@ -140,10 +146,13 @@ const ListProducts = () => {
                           )}
                         </td>
                         <td>
-                          <Link to={`/producto/${products._id}`}>
-                              <button className="botonp">Modificar</button>
-                          </Link>
-                          <button className="botonp">Eliminar</button>
+                          <button className="botonp">
+                            <Link to={`/producto/${products._id}`}>
+                              Modificar
+                            </Link>
+                          </button>
+                          <button className="botonp" onClick={() => eliminarProducto(products._id)}>
+                            <Link to={`/productos`}>Eliminar</Link></button>
                         </td>
                       </tr>
                     ))}

@@ -23,10 +23,10 @@ export const NuevoProducto = () => {
         product.description = description
         product.stock = stock
         product.price = price
-        product.imagen = Object.assign({url: "./logo.png"})
+        product.imagen = Object.assign({url:"./images/products/sportSpeed.jpg"})
         product.role = "Administrator"
         product.category = "Travertino"
-        console.log(product.imagen)
+        // console.log(product.imagen)
         await dispatch(postProductDetails(product))
         navigate("/productos")
     }
